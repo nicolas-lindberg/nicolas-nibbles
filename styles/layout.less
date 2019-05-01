@@ -2,17 +2,32 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin-left: -@grid-spacing;
   margin-right: -@grid-spacing;
 
+  &--padded {
+    @media @tablet {
+      margin-left: @grid-spacing/2;
+      margin-right: @grid-spacing/2;
+    }
+  }
+
   .grid-item {
-    flex: 0 0 auto;
+    flex: 0 0 100%;
+    max-width: 100%;
     padding-left: @grid-spacing;
     padding-right: @grid-spacing;
 
     &--half {
-      flex-basis: 50%;
-      max-width: 50%;
+      @media @tablet {
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+      @media @desktop-xxl {
+        flex-basis: 33.33333%;
+        max-width: 33.33333%;
+      }
     }
     &--third {
       flex-basis: 33.33333%;

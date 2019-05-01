@@ -11,7 +11,7 @@
 
   // Load all images via Squarespace's Responsive ImageLoader
   function loadAllImages() {
-    var images = document.querySelectorAll('img[data-src]' );
+    var images = document.querySelectorAll('img[data-src]');
     for (var i = 0; i < images.length; i++) {
       ImageLoader.load(images[i], {load: true});
     }
@@ -27,5 +27,21 @@
   document.querySelectorAll('.text-highlighted, .image-caption').forEach(function(el) {
     el.innerHTML = el.innerText.split(' ').map(function(text) { return '<span>' + text + '</span>' }).join(' ');
   });
+
+
+  document.querySelectorAll('.post-list__item').forEach(function(postItem) {
+    postItem.querySelectorAll('.permalink').forEach(function(link) {
+
+      link.addEventListener('mouseover', function() {
+        postItem.classList.add('hover');
+      });
+
+      link.addEventListener('mouseout', function() {
+        postItem.classList.remove('hover');
+      });
+
+    });
+  });
+
 
 }());

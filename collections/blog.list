@@ -12,32 +12,53 @@
 {.end}
 
 
-<div class="grid">
+<div class="grid grid--padded">
 
   <!-- item loop -->
   {.repeated section items}
 
-    <article id="post-{id}" class="blog-list-item grid-item grid-item--half {@|item-classes}" data-item-id="{id}">
+    <article id="post-{id}"
+      class="
+        post-list__item grid-item grid-item--half
+        {@|item-classes}
+        {.if starred}{.or}not-featured{.end}
+      "
+      data-item-id="{id}">
 
-      <!-- main image (thumbnail) -->
-      {.main-image?}
-        <a href="{fullUrl}" class="main-image content-fill">
-          <img {@|image-meta} />
-        </a>
-      {.end}
 
-      <!-- post title -->
-      <h2 class="title" data-content-field="title">
-        <span>
-          {.passthrough?}
-            <a href="{sourceUrl}" target="_blank">{title}</a>
-          {.or}
-            <a href="{fullUrl}">{title}</a>
+      <div class="post-list__item__content{.if starred} container{.end}">
+
+        <!--POST IMAGE-->
+        {.main-image?}
+          <a href="{fullUrl}" class="post-image content-fill permalink">
+            <img {@|image-meta} />
+          </a>
+        {.end}
+
+        <div class="post-text">
+
+          <!--POST TITLE-->
+          <h2 class="post-title" data-content-field="title">
+            <span>
+              {.passthrough?}
+                <a href="{sourceUrl}" target="_blank">{title}</a>
+              {.or}
+                <a href="{fullUrl}" class="permalink">{title}</a>
+              {.end}
+            </span>
+          </h2>
+
+          <!--DATE-->
+          {.if starred}
+            {@|apply date.block}
           {.end}
-        </span>
-      </h2>
 
-      {@|apply date.block}
+          <!--CATEGORIES-->
+            {@|apply categories.block}
+
+        </div>
+
+      </div>
 
     </article>
 

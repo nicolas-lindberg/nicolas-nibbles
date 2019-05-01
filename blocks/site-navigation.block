@@ -1,4 +1,4 @@
-<nav class="site-navigation">
+<nav class="site-navigation__primary">
   <ul class="site-navigation-list">
     {.repeated section items}
 
@@ -19,5 +19,9 @@
       </li>
 
     {.end}
+  </ul>
+
+  <ul class="external-links-list">
+
   </ul>
 </nav>

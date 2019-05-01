@@ -19,6 +19,8 @@
           </h1>
         {.end}
 
+        <button id="mobile-nav-toggle" class="site-hamburger">Toggle menu</div>
+
         <!-- site navigation -->
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       </header>

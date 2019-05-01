@@ -19,7 +19,10 @@
     left: 8rem;
     right: 0;
     bottom: 0;
-    background-color: @yellow;
+
+    @media @desktop {
+      background-color: @yellow;
+    }
   }
 }
 
@@ -28,7 +31,7 @@
   margin: 0;
   padding: .5rem 0 .375rem;
   font-size: 1.75rem;
-  line-height: 2.25em;
+  line-height: 2.25rem;
 
   @media @tablet {
     padding: 1rem 0 .75rem;
@@ -45,10 +48,54 @@
   }
 }
 
-.site-navigation {
-  @media @mobile {
-    display: none;
+@keyframes hamburger-menu {
+  0% { transform: none; }
+  70% { transform: rotateY(-35deg) skewY(-10deg); }
+  100% { transform: rotateY(-30deg) skewY(-8deg); }
+}
+
+.site-hamburger {
+  // reset button styles
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+
+  // custom burger
+  position: relative;
+  width: 4rem;
+  height: 3.75rem;
+  margin-top: .25rem;
+  background: @yellow url("/assets/img/hamburger.svg") no-repeat center center;
+  background-size: 26px 24px;
+  text-indent: 99999px;
+  white-space: nowrap;
+
+  &:hover::after {
+    animation: none;
+    transform: rotateY(-35deg) skewY(-10deg);
   }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: @black;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transition: transform .5s ease-out;
+    transform-origin: left;
+    animation: hamburger-menu .5s ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+  }
+}
+
+.site-navigation {
 
   &-list {
     margin: 0;
@@ -61,20 +108,39 @@
     margin-right: 2rem;
 
     a {
+      display: inline-block;
       color: @black;
       text-decoration: none;
+      transition: transform .1s ease-in-out;
 
       &:hover {
         color: @black;
       }
     }
 
-    &.active-link {
+    a:hover,
+    &.active-link > a {
       transform: rotate(-7deg);
-
-      > a {
-      }
     }
   }
 
+  @media @mobile {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 1.5rem;
+    right: 1.5rem;
+    left: 1.5rem;
+    background: @yellow;
+
+    &-list {
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    &-item {
+      display: block;
+      margin: 1.5rem 0;
+    }
+  }
 }

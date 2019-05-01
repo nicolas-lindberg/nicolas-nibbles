@@ -2,9 +2,7 @@
 
 
 .post-title {
-  //margin: -.75em 1rem 0;
-
-  span {
+  > * {
     display: inline;
     background: @yellow;
     padding: .25rem 0 0;
@@ -165,6 +163,10 @@
     }
   }
 
+  .post-title {
+    margin: -.75em 1rem 0;
+  }
+
   .post-categories,
   .lead {
     margin-top: 1.75rem;
@@ -253,6 +255,10 @@
       padding-top: 1rem !important;
     }
   }
+}
+.image-block .image-block-outer-wrapper:not(.image-block-v2) .intrinsic .image-block-wrapper img {
+  width: 120%;
+  left: -10%;
 }
 
 .horizontalrule-block {

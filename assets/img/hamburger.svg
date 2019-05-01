@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26" height="24" viewBox="0 0 26 24">
+  <defs>
+    <rect id="hamburger-a" width="26" height="24" x="0" y="0"/>
+    <rect id="hamburger-c" width="26" height="5" x="0" y="0"/>
+    <rect id="hamburger-e" width="26" height="3" x="0" y="0"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="hamburger-b" fill="#fff">
+      <use xlink:href="#hamburger-a"/>
+    </mask>
+    <path fill="#000" d="M0,20 L26,20 L26,20 C26,22.209139 24.209139,24 22,24 L4,24 C1.790861,24 2.705415e-16,22.209139 0,20 L0,20 Z" mask="url(#hamburger-b)"/>
+    <g mask="url(#hamburger-b)">
+      <mask id="hamburger-d" fill="#fff">
+        <use xlink:href="#hamburger-c"/>
+      </mask>
+      <ellipse cx="13" cy="4.5" fill="#000" mask="url(#hamburger-d)" rx="13" ry="4.5"/>
+    </g>
+    <rect width="26" height="3" y="8" fill="#000" mask="url(#hamburger-b)"/>
+    <g mask="url(#hamburger-b)">
+      <g transform="translate(0 14)">
+        <mask id="hamburger-f" fill="#fff">
+          <use xlink:href="#hamburger-e"/>
+        </mask>
+        <ellipse cx="13" cy="-.5" fill="#000" mask="url(#hamburger-f)" rx="7" ry="3.5"/>
+        <ellipse cx="1" cy="-.5" fill="#000" mask="url(#hamburger-f)" rx="7" ry="3.5"/>
+        <ellipse cx="25" cy="-.5" fill="#000" mask="url(#hamburger-f)" rx="7" ry="3.5"/>
+      </g>
+    </g>
+  </g>
+</svg>

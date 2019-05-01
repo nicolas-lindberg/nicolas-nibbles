@@ -39,13 +39,11 @@
 
           <!--POST TITLE-->
           <h2 class="post-title" data-content-field="title">
-            <span>
-              {.passthrough?}
-                <a href="{sourceUrl}" target="_blank">{title}</a>
-              {.or}
-                <a href="{fullUrl}" class="permalink">{title}</a>
-              {.end}
-            </span>
+            {.passthrough?}
+              <a href="{sourceUrl}" target="_blank">{title}</a>
+            {.or}
+              <a href="{fullUrl}" class="permalink">{title}</a>
+            {.end}
           </h2>
 
           <!--DATE-->

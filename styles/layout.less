@@ -1,16 +1,22 @@
 
 .grid {
   display: flex;
+  flex-wrap: wrap;
   margin-left: -@grid-spacing;
   margin-right: -@grid-spacing;
 
   .grid-item {
-    flex: 1;
+    flex: 0 0 auto;
     padding-left: @grid-spacing;
     padding-right: @grid-spacing;
 
     &--half {
-      width: 50%;
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+    &--third {
+      flex-basis: 33.33333%;
+      max-width: 33.33333%;
     }
   }
 }

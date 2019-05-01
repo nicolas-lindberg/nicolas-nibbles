@@ -1,0 +1,64 @@
+
+
+.site-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: .75rem 1.75rem 3rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 8rem;
+    right: 0;
+    bottom: 0;
+    background-color: @color-yellow;
+  }
+}
+
+
+.site-title-heading {
+  .site-title-link {
+    font-size: 2rem;
+    text-decoration: none;
+    color: @color-black;
+
+    &:hover {
+      color: @color-black;
+    }
+  }
+}
+
+.site-navigation {
+
+  &-list {
+    margin: 0;
+    padding: 0;
+  }
+
+  &-item {
+    display: inline-block;
+    font-size: 1.25rem;
+    margin-right: 2rem;
+
+    a {
+      color: @color-black;
+      text-decoration: none;
+
+      &:hover {
+        color: @color-black;
+      }
+    }
+
+    &.active-link {
+      transform: rotate(-7deg);
+
+      > a {
+      }
+    }
+  }
+
+}

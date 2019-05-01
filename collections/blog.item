@@ -15,7 +15,7 @@
 
     <!--AUTHOR AND DATE-->
     <p class="meta">
-      <a href="{fullUrl}" class="permalink"><time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time></a> by <a href="{collection.fullUrl}?author={author.id}">{author.displayName}</a>
+      {@|apply date.block}
     </p>
 
     <!--MAIN CONTENT-->

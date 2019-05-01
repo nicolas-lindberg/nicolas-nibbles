@@ -1,0 +1,1 @@
+<time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time>

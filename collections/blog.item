@@ -4,53 +4,83 @@
   <!--WRAPPER-->
   <article id="post-{id}" class="{@|item-classes}" data-item-id="{id}">
 
-    <!--POST TILE-->
-    <h1 class="title" data-content-field="title">
-      {.passthrough?}
-        <a href="{sourceUrl}" target="_blank">{title}</a>
-      {.or}
-        {title}
+    <!-- COVER IMAGE -->
+    {.main-image?}
+      <a href="{fullUrl}" class="cover-image content-fill">
+        <img {@|image-meta} />
+      </a>
+    {.end}
+
+    <header class="post-header container">
+
+      <div class="post-header--content">
+        <!--POST TILE-->
+        <h1 class="title" data-content-field="title">
+          <span>
+            {.passthrough?}
+              <a href="{sourceUrl}" target="_blank">{title}</a>
+            {.or}
+              {title}
+            {.end}
+          </span>
+        </h1>
+
+        <!--CATEGORIES-->
+        {.if categories}
+          <div class="categories">
+            {.repeated section categories}
+              <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with}
+              <span class="separator"></span>
+            {.end}
+          </div>
+        {.end}
+
+        <!--EXCERPT-->
+        {.if excerpt}
+          <div class="lead">{excerpt}</div>
+        {.end}
+      </div>
+
+      <hr class="post-separator">
+
+    </header>
+
+    <div class="container">
+
+      <!--MAIN CONTENT-->
+      {body}
+
+    </div>
+
+    <footer class="container">
+
+      <!--BLOG INJECTION-->
+      {postItemInjectCode}
+
+      <!--TAGS-->
+      {.repeated section tags}
+        <a class="tag" href="{collection.fullUrl}?tag={@|url-encode}">{@}</a>{.alternates with},
       {.end}
-    </h1>
 
-    <!--AUTHOR AND DATE-->
-    <p class="meta">
-      {@|apply date.block}
-    </p>
-
-    <!--MAIN CONTENT-->
-    {body}
-
-    <!--BLOG INJECTION-->
-    {postItemInjectCode}
-
-    <!--CATEGORIES-->
-    {.repeated section categories}
-      <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with},
-    {.end}
-
-    <!--TAGS-->
-    {.repeated section tags}
-      <a class="tag" href="{collection.fullUrl}?tag={@|url-encode}">{@}</a>{.alternates with},
-    {.end}
-
-    <!--SHARE AND LIKE-->
-    {@|like-button}
-    {@|social-button}
+      <!--SHARE AND LIKE-->
+      {@|like-button}
+      {@|social-button}
 
 
-    <!--LOCATION-->
-    {.section location}
-      {.section addressTitle}
-        {addressTitle}
-        {addressLine1}
-        {addressLine2}
-        {addressCountry}
+      <!--LOCATION-->
+      {.section location}
+        {.section addressTitle}
+          {addressTitle}
+          {addressLine1}
+          {addressLine2}
+          {addressCountry}
+        {.end}
       {.end}
-    {.end}
 
-    <!--COMMENTS-->
-    {@|comments}
+      <!--COMMENTS-->
+      {@|comments}
+
+    </footer>
 
   </article>
 

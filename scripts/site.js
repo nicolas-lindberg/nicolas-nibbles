@@ -23,4 +23,9 @@
   // The event subscription that reloads images on resize
   window.addEventListener('resize', loadAllImages);
 
+
+  document.querySelectorAll('.text-highlighted, .image-caption').forEach(function(el) {
+    el.innerHTML = el.innerText.split(' ').map(function(text) { return '<span>' + text + '</span>' }).join(' ');
+  });
+
 }());

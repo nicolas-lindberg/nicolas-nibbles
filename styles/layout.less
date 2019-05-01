@@ -1,0 +1,24 @@
+
+.grid {
+  display: flex;
+  margin-left: -@grid-spacing;
+  margin-right: -@grid-spacing;
+
+  .grid-item {
+    flex: 1;
+    padding-left: @grid-spacing;
+    padding-right: @grid-spacing;
+
+    &--half {
+      width: 50%;
+    }
+  }
+}
+
+.container {
+  max-width: 1152px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: @grid-spacing;
+  padding-right: @grid-spacing;
+}

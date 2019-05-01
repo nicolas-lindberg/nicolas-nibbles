@@ -1,1 +1,2 @@
-<time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time>
+
+<time class="text-highlighted" datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time>

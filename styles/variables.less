@@ -8,6 +8,23 @@
 }
 
 
-@color-yellow: #FFF371;
-@color-black: #000000;
-@color-white: #FFFEF5;
+@yellow: #FFF371;
+@black: #000000;
+@white: #FFFEF5;
+
+
+@site-padding: 1.5rem;
+@grid-spacing: 1rem;
+
+
+
+/* Breakpoints */
+/* ------------------------- Source: http://blog.scur.pl/2012/06/variable-media-queries-less-css/ */
+@highdensity: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+              ~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+              ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+              ~"only screen and (min-device-pixel-ratio: 1.5)";
+@mobile:      ~"only screen and (max-width: 768px)";
+@tablet:      ~"only screen and (min-width: 768px)";
+@desktop:     ~"only screen and (min-width: 992px)";
+@desktop-xl:  ~"only screen and (min-width: 1200px)";

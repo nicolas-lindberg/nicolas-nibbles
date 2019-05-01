@@ -15,20 +15,29 @@ body {
   .font("Stabil Grotesk");
   font-size: 1.125rem;
   font-weight: normal;
+  line-height: 1.66666667;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .site-container {
-  padding: 1.5rem;
+  @media @desktop {
+    padding: 1.5rem;
+  }
 }
 
 .content-container { }
 
 .site-footer {
-  font-size: 75%;
-  margin-top: 4vw;
-  margin-bottom: 4vw;
+}
+
+
+a {
+  text-decoration: none;
+
+  &, &:hover, &:visited {
+    color: @black;
+  }
 }
 
 
@@ -37,18 +46,6 @@ body {
 ***************************************************/
 
 body.homepage { }
-
-
-
-/* Blog list
-***************************************************/
-
-body.collection-type-blog.view-list {
-
-  .blog-list-item + .blog-list-item {
-    margin-top: 3vw;
-  }
-}
 
 
 

@@ -31,12 +31,12 @@
 .site-title-heading {
   margin: 0;
   padding: .5rem 0 .375rem;
-  font-size: 1.75rem;
+  font-size: @title-heading-size-mobile;
   line-height: 2.25rem;
 
   @media @tablet {
     padding: 1rem 0 .75rem;
-    font-size: 2rem;
+    font-size: @title-heading-size;
   }
 
   .site-title-link {
@@ -120,7 +120,7 @@
   }
 
   &.is-visible {
-    transform: scale(10);
+    transform: scale(12);
     top: -1.75rem;
     right: -1.5rem;
 
@@ -192,19 +192,23 @@
 
   @media @mobile {
     display: none;
-    position: absolute;
+    overflow: auto;
+    position: fixed;
     z-index: 1;
-    top: 1.5rem;
-    right: 1.5rem;
-    left: 1.5rem;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: @site-padding;
     animation: mobile-nav .5s ease-in-out;
+    color: @white;
+    text-align: center;
 
     &.is-visible {
       display: block;
     }
 
     &-list {
-      text-align: center;
       margin: 3rem 0;
     }
 
@@ -222,4 +226,74 @@
       }
     }
   }
+}
+
+
+.network-sites {
+  max-width: 440px;
+  margin: 5rem auto 0;
+
+  @media @tablet {
+    display: none;
+  }
+
+  @keyframes arrow {
+    from {
+      top: 0;
+      right: 0;
+    }
+    to {
+      top: -.25rem;
+      right: -.25rem;
+    }
+  }
+
+  .external-link {
+    margin-bottom: 2rem;
+
+    &__card {
+      padding: 2rem 2rem 0;
+      text-align: left;
+    }
+
+    &__title {
+      font-size: @title-heading-size-mobile;
+      color: @white;
+
+      .arrow {
+        display: inline-block;
+        position: relative;
+      }
+    }
+
+    &__image {
+      margin-top: 1rem;
+      height: 7.75rem;
+      background: black;
+    }
+
+    a:hover {
+      .arrow {
+        animation: arrow .4s ease-out infinite alternate;
+      }
+    }
+  }
+
+  .nicolas-works {
+    .font("FK Display");
+
+    .external-link__card {
+      background: @blue;
+      box-shadow: 0 1px 20px 2px fade(@blue, 35%);
+    }
+  }
+  .nicolas-sights {
+    .font("FK Display");
+
+    .external-link__card {
+      background: @clay;
+      box-shadow: 0 1px 20px 2px fade(@clay, 35%);
+    }
+  }
+
 }

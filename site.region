@@ -23,7 +23,31 @@
 
         <!-- site navigation -->
         <div id="site-nav" class="site-navigation">
+
           <squarespace:navigation navigationId="siteNav" template="site-navigation" />
+
+          <div class="network-sites">
+            <p>Specials on the menu</p>
+
+            <div class="external-link nicolas-works">
+              <a href="#">
+                <div class="external-link__card">
+                  <div class="external-link__title">Nicolas Works <span class="arrow">↗</span></div>
+                  <div class="external-link__image"></div>
+                </div>
+              </a>
+            </div>
+
+            <div class="external-link nicolas-sights">
+              <a href="#">
+                <div class="external-link__card">
+                  <div class="external-link__title">Nicolas Sights <span class="arrow">↗</span></div>
+                  <div class="external-link__image"></div>
+                </div>
+              </a>
+            </div>
+          </div>
+
         </div>
       </header>
 

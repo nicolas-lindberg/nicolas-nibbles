@@ -1,4 +1,4 @@
-import { ImageLoader, Tweaks } from '@squarespace/core';
+import { ImageLoader, Tweak } from '@squarespace/core';
 import debounce from 'lodash/debounce';
 
 /**

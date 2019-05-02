@@ -7,11 +7,11 @@
     <!-- include system scripts, page meta, and header code injection -->
     {squarespace-headers}
   </head>
-  <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes}" data-controller="BlogLayout, SimpleImageLoad">
 
     <div class="site-container">
 
-      <header class="site-header">
+      <header class="site-header" data-controller="HeaderNav">
         <!-- site title or logo -->
         {.section website}
           <h1 class="site-title-heading" data-content-field="site-title">
@@ -64,7 +64,7 @@
     </div>
 
     <!-- combo and minify scripts when not logged in -->
-    <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
+    <squarespace:script src="site-bundle.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
 
     <!-- other scripts, and footer code injection -->
     {squarespace-footers}

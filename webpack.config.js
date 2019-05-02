@@ -1,8 +1,8 @@
-var webpack = require('webpack');
+
 var path = require('path');
+var webpack = require('webpack');
 
-var scriptsPath = path.resolve(__dirname, 'build', 'scripts');
-
+var bundlePath = path.resolve(__dirname, 'build', 'scripts');
 var sitejs = ['./scripts/site.js'];
 
 var sourceScripts = sitejs;
@@ -10,28 +10,30 @@ var sourceScripts = sitejs;
 var config = {
   entry: sourceScripts,
   output: {
-    path: scriptsPath,
+    path: bundlePath,
     filename: 'site-bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        use: {
+          loader: 'babel-loader'
+        }
       }
     ]
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin()
+    //new webpack.optimize.UglifyJsPlugin()
   ],
   resolve: {
-    modulesDirectories: [
+    modules: [
       path.resolve(__dirname, 'node_modules')
     ]
   },
   resolveLoader: {
-    modulesDirectories: [
+    modules: [
       path.resolve(__dirname, 'node_modules')
     ]
   }

@@ -1,0 +1,37 @@
+{
+  "name": "nicolas-nibbles",
+  "version": "1.0.0",
+  "description": "Template for Nicolas Nibbles",
+  "dependencies": {
+    "@squarespace/controller": "^1.0.4",
+    "@squarespace/mercury": "^1.1.5"
+  },
+  "devDependencies": {
+    "@squarespace/toolbelt": "^0.9.2",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "eslint": "^5.16.0",
+    "eslint-config-squarespace": "^1.0.1",
+    "webpack": "^4.30.0"
+  },
+  "scripts": {
+    "build": "squarespace assemble && webpack",
+    "clean": "squarespace clean",
+    "deploy": "squarespace setup && squarespace deploy",
+    "lint": "eslint scripts",
+    "start": "squarespace setup && (npm run watch & npm run server)",
+    "server": "squarespace runserver --auth",
+    "server:auth": "npm run server -- --run-authenticated",
+    "watch": "squarespace assemble --watch & webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://mandarin-llama-w3k7.squarespace.com/template.git"
+  },
+  "author": "Nicolas Lindberg",
+  "license": "ISC",
+  "squarespace": {
+    "templateId": "nicolas-nibbles"
+  }
+}

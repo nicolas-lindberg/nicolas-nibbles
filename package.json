@@ -4,8 +4,10 @@
   "description": "Template for Nicolas Nibbles",
   "dependencies": {
     "@squarespace/controller": "^1.0.4",
+    "@squarespace/core": "^1.1.0",
     "@squarespace/mercury": "^1.1.5",
-    "babel-runtime": "^6.26.0"
+    "babel-runtime": "^6.26.0",
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",

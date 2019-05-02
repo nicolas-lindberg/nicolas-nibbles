@@ -23,7 +23,7 @@
     right: 0;
     bottom: 0;
 
-    @media @desktop {
+    @media @tablet {
       background-color: @yellow;
     }
   }
@@ -201,6 +201,9 @@
         a {
           color: @white;
 
+          &::after {
+            background: @yellow;  
+          }
           &:hover {
             color: @white;
           }
@@ -238,7 +241,6 @@
         content: "";
         position: absolute;
         box-sizing: content-box;
-        z-index: -1;
         height: .25rem;
         top: 50%;
         transform: translateY(-50%);
@@ -246,7 +248,7 @@
         width: 0;
         padding-left: .5rem;
         padding-right: .5rem;
-        background: @yellow;
+        background: @white;
         opacity: 0;
         transition: width .2s ease-in-out, opacity .1s ease-in-out;
       }

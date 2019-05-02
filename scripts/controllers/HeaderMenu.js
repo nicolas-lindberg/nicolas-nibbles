@@ -22,7 +22,6 @@ function HeaderMenu(element) {
       const scaling = windowHeight / buttonHeight;
 
       // Open menu. Literally.
-      console.log(hamburgerMenu)
       hamburgerMenu.style.transform = 'scale(' + scaling + ')';
 
     } else {
@@ -33,8 +32,7 @@ function HeaderMenu(element) {
   }
 
   document.addEventListener('click', function (e) {
-    console.log(e.target);
-
+    
     if (e.target.matches('.mobile-menu-toggle')) toggleMenu();
   
   }, false);

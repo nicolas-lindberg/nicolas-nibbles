@@ -4,7 +4,7 @@ import debounce from 'lodash/debounce';
 /**
  * Initialize Squarespace image loader
  */
-function ResponsiveImageLoader (element) {
+function ResponsiveImageLoader(element) {
 
   // Load all images via Squarespace's Responsive ImageLoader
   function loadAllImages() {

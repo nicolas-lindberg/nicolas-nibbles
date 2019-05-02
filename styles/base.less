@@ -39,6 +39,52 @@ hr {
 }
 
 
+
+
+
+// =======================================================
+
+//    Loader
+
+// =======================================================
+
+.site-loader {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: .25rem;
+  z-index: 9999;
+  background-color: transparent;
+  transition: background-color 0.3s ease-out, transform 0s 0.3s linear;
+
+  [data-mercury-loading] & {
+    background-color: @black;
+    transition: transform 0.3s cubic-bezier(0, 0, 0, 0.6);
+    transform: translateX(60%);
+  }
+  [data-mercury-loading='done'] & {
+    transform: translateX(100%);
+  }
+  // Show
+  display: none;
+
+  .tweak-site-ajax-loading-enable.tweak-site-ajax-loading-bar-show & {
+    display: block;
+  }
+
+}
+
+body {
+  opacity: 1;
+  transition: all 0.5s ease-out;
+
+  [data-mercury-loading] & {
+    opacity: 0;
+  }
+}
+
+
 /* Break grid and stack blocks on small screens
 ***************************************************/
 

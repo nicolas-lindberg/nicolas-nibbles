@@ -7,7 +7,9 @@
     <!-- include system scripts, page meta, and header code injection -->
     {squarespace-headers}
   </head>
-  <body id="{squarespace.page-id}" class="{squarespace.page-classes}" data-controller="BlogLayout, ResponsiveImageLoader">
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes}" data-controller="SiteLoader, BlogLayout, ResponsiveImageLoader">
+
+    <div class="site-loader"></div>
 
     <div class="site-container">
 

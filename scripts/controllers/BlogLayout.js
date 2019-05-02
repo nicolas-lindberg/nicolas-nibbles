@@ -2,7 +2,7 @@
 /**
  * Set up assistive features for blog
  */
-function BlogLayout (element) {
+function BlogLayout(element) {
 
   document.querySelectorAll('.post-list__item').forEach(function(postItem) {
     postItem.querySelectorAll('.permalink').forEach(function(link) {

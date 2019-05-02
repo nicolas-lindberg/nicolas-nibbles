@@ -1,4 +1,7 @@
 
+/* Layout
+   ========================================================================== */
+
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -42,4 +45,24 @@
   margin-right: auto;
   padding-left: @grid-spacing;
   padding-right: @grid-spacing;
+}
+
+
+/* Helpers
+   ========================================================================== */
+
+.hidden-tablet {
+  @media @tablet {
+    display: none;
+  }
+}
+.hidden-desktop {
+  @media @desktop {
+    display: none;
+  }
+}
+.hidden-desktop-xl {
+  @media @desktop-xl {
+    display: none;
+  }
 }

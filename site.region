@@ -11,7 +11,7 @@
 
     <div class="site-container">
 
-      <header class="site-header" data-controller="HeaderNav">
+      <header class="site-header" data-controller="HeaderMenu">
         <!-- site title or logo -->
         {.section website}
           <h1 class="site-title-heading" data-content-field="site-title">
@@ -19,34 +19,51 @@
           </h1>
         {.end}
 
-        <button id="mobile-nav-toggle" class="site-hamburger">Toggle menu</button>
+        <button id="hamburger-menu" class="mobile-menu-toggle site-hamburger">Toggle menu</button>
 
-        <!-- site navigation -->
-        <div id="site-nav" class="site-navigation">
+        <!-- site menu -->
+        <div class="site-menu">
+
+          <p class="hidden-tablet">On the menu tonight</p>
 
           <squarespace:navigation navigationId="siteNav" template="site-navigation" />
 
-          <div class="network-sites">
-            <p>Specials on the menu</p>
+          <squarespace:query collection="links" >
 
-            <div class="external-link nicolas-works">
-              <a href="#">
-                <div class="external-link__card">
-                  <div class="external-link__title">Nicolas Works <span class="arrow">↗</span></div>
-                  <div class="external-link__image"></div>
+            <div class="network-sites">
+              <p>Chef's specials</p>
+
+              {.repeated section items}
+                <div class="external-link {title|slugify}">
+                  <a
+                    {.passthrough?}
+                      href="{sourceUrl}" target="_blank"
+                    {.or}
+                      href="{fullUrl}" class="permalink"
+                    {.end}
+                  >
+                    <div class="external-link__card">
+
+                      <!--LINK TITLE-->
+                      <h2 class="external-link__title" data-content-field="title">
+                        <span>{title}</span>
+                        <span class="arrow">↗</span>
+                      </h2>
+                      
+                      <!--LINK IMAGE-->
+                      <div class="external-link__image content-fill">
+                        {.main-image?}<img {@|image-meta} />{.end}
+                      </div>
+
+                    </div>
+                  </a>
                 </div>
-              </a>
+              {.end}
             </div>
 
-            <div class="external-link nicolas-sights">
-              <a href="#">
-                <div class="external-link__card">
-                  <div class="external-link__title">Nicolas Sights <span class="arrow">↗</span></div>
-                  <div class="external-link__image"></div>
-                </div>
-              </a>
-            </div>
-          </div>
+          </squarespace:query>
+
+          <button class="mobile-menu-toggle site-hamburger-close">Close menu</button>
 
         </div>
       </header>

@@ -2,12 +2,12 @@
 // General imports
 import controller from '@squarespace/controller';
 
-
+// Import controllers
 import BlogLayout from './controllers/BlogLayout';
-import HeaderNav from './controllers/HeaderNav';
+import HeaderMenu from './controllers/HeaderMenu';
 import ResponsiveImageLoader from './controllers/ResponsiveImageLoader';
 
 // Bind controllers
 controller.register('BlogLayout', BlogLayout);
-controller.register('HeaderNav', HeaderNav);
+controller.register('HeaderMenu', HeaderMenu);
 controller.register('ResponsiveImageLoader', ResponsiveImageLoader);

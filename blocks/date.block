@@ -2,6 +2,6 @@
 
 <div class="post-time">
   <a href="{fullUrl}" class="permalink">
-    <time class="text-highlighted" datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time>
+    <span class="text-highlighted"><time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time></span>
   </a>
 </div>

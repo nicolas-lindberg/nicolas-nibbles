@@ -6,6 +6,8 @@
 
     <!-- include system scripts, page meta, and header code injection -->
     {squarespace-headers}
+    
+    <link href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" rel="stylesheet" />
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}" data-controller="SiteLoader, BlogLayout, ResponsiveImageLoader">
 

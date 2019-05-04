@@ -62,12 +62,23 @@
 
       <!--LOCATION-->
       {.section location}
-        {.section addressTitle}
-          {addressTitle}
-          {addressLine1}
-          {addressLine2}
-          {addressCountry}
-        {.end}
+        <div class="location">
+          <div class="location-map" data-controller="MapViewer" data-loc-name="{addressTitle}" data-loc-lng="{markerLng}" data-loc-lat="{markerLat}" data-loc-zoom="{mapZoom}" data-loc-popup=".location-info"></div>
+          
+          <div class="location-info">
+            {.if addressTitle}<p><strong>{addressTitle}</strong></p>{.end}
+            
+            <p>
+              {addressLine1}
+              {.if addressLine2}<br>{addressLine2}{.end}
+              {.if addressCountry}<br>{addressCountry}{.end}
+            </p>
+
+            <p>
+              <a href="https://www.google.com/maps/search/?api=1&query={addressTitle|url-encode}+{addressLine1|url-encode}+{addressLine2|url-encode}+{addressCountry|url-encode}">Show on Google Maps</a>
+            </p>
+          </div>
+        </div>
       {.end}
 
       <!--COMMENTS-->

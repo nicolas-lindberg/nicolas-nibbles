@@ -1,16 +1,22 @@
 
-<div class="blog-list" data-controller="BlogList">
+<div class="blog-list" data-controller="BlogList, BlogLayout">
 
-  {.section categoryFilter}
-    <h1 class="filtered-by">Nibbles á la {@|safe}</h1>
-  {.end}
+  {.if categoryFilter || tagFilter || authorFilter}
+    <div class="container">
 
-  {.section tagFilter}
-    <h1 class="filtered-by">MmmMMmm, {@|safe} 🤤</h1>
-  {.end}
+      {.section categoryFilter}
+        <h1 class="filtered-by">Nibbles á la {@|safe}</h1>
+      {.end}
 
-  {.if authorFilter}
-    <h1 class="filtered-by">Posted by {author.dishplayName}</h1>
+      {.section tagFilter}
+        <h1 class="filtered-by">MmmMMmm, {@|safe} 🤤</h1>
+      {.end}
+
+      {.if authorFilter}
+        <h1 class="filtered-by">Posted by {author.dishplayName}</h1>
+      {.end}
+
+    </div>
   {.end}
 
   <div class="blog-list__inner">

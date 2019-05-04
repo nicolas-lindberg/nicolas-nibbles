@@ -87,7 +87,7 @@
 
     {.if authenticatedAccount}
       <script type="text/javascript">
-        console.log({@|json-pretty});
+        console.log(JSON.parse(JSON.stringify({@|json-pretty})));
       </script>
     {.end}
 

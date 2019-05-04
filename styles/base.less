@@ -31,6 +31,30 @@ a {
   }
 }
 
+p {
+  a {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: .25em;
+      background: @yellow;
+      transition: all .2s ease-in-out;
+    }
+
+    &:hover {
+      &::after {
+        height: 1em;
+      }
+    }
+  }
+}
+
 hr {
   border: none;
   width: 148px;

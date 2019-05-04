@@ -206,55 +206,77 @@
    ========================================================================== */
 
 
-.sqs-layout > .sqs-row {
-  margin-left: -@grid-spacing;
-  margin-right: -@grid-spacing;
-}
-.sqs-block {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
+.sqs-layout {
+  > .sqs-row {
+    margin-left: -@grid-spacing;
+    margin-right: -@grid-spacing;
+  }
 
-[class*=sqs-col] .sqs-block {
-  padding-left: @site-padding;
-  padding-right: @site-padding;
+  .sqs-block {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  [class*=sqs-col] .sqs-block {
+    padding-left: @site-padding;
+    padding-right: @site-padding;
+  }
 
-  &.image-block {
+  .sqs-col-12 > .sqs-block-image {
     padding-left: 0;
     padding-right: 0;
-  }
-}
 
-.html-block,
-.horizontalrule-block {
-  @media @tablet {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  @media @desktop {
-    width: 50%;
-  }
-}
-
-.image-block {
-  .image-caption-wrapper {
-    padding-top: .75rem !important;
-    text-align: center;
-
-    @media @desktop {
-      padding-top: 1rem !important;
+    @media @mobile {
+      img {
+        transform: scale(1.1);
+      }
     }
   }
-}
-.image-block .image-block-outer-wrapper:not(.image-block-v2) .intrinsic .image-block-wrapper img {
-  width: 120%;
-  left: -10%;
-}
+  [class*=sqs-col] .sqs-block-image {
+    @media @mobile {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 
-.horizontalrule-block {
-  hr {
-    background-color: transparent;
+  .html-block,
+  .horizontalrule-block {
+    @media @tablet {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media @desktop {
+      width: 50%;
+    }
+  }
+
+  .image-block {
+    .image-caption-wrapper {
+      padding-top: .75rem !important;
+      text-align: center;
+
+      @media @desktop {
+        padding-top: 1rem !important;
+      }
+    }
+    .image-caption {
+      padding-left: @site-padding;
+      padding-right: @site-padding;
+    }
+  }
+
+  .sqs-widgets-audio-player {
+    background: @yellow;
+
+    .action .pause {
+      box-sizing: content-box;
+    }
+  }
+
+  .horizontalrule-block {
+    hr {
+      background-color: transparent;
+    }
   }
 }
 

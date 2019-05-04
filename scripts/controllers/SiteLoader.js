@@ -75,7 +75,7 @@ function SiteLoader() {
     document.documentElement.setAttribute('data-mercury-loading', '');
   });
   window.addEventListener('template:blogList.load', function() {
-    mercury.commitCacheEntry(window.location.pathname + window.location.search, '.content-contaienr');
+    mercury.commitCacheEntry(window.location.pathname + window.location.search, '.content-container');
   });
 
   // Sync controllers on ajax load

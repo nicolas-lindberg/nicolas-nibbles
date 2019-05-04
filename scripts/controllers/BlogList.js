@@ -141,8 +141,6 @@ function BlogList(element) {
 
     resizeEnd(sync);
 
-    console.log(loadMoreButton)
-
     loadMoreButton.addEventListener('click', loadMoreClick);
 
   };

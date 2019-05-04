@@ -26,7 +26,10 @@
             {@|item-classes}
             {.if starred}{.or}not-featured{.end}
           "
-          data-item-id="{id}">
+          data-item-id="{id}"
+          data-offset="{addedOn}"
+          {.if pagination.nextPage}{.or}data-last-page{.end}
+        >
 
 
           <div class="post-list__item__content{.if starred} container{.end}">

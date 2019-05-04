@@ -1,3 +1,4 @@
+
 /* General post styles
    ========================================================================== */
 
@@ -136,7 +137,6 @@
     }
   }
 }
-
 
 
 /* Post page
@@ -281,10 +281,32 @@
 }
 
 
-
 /* Post blocks
    ========================================================================== */
 
 .location-map {
   height: 400px;
+}
+
+
+
+/* Pagination
+   ========================================================================== */
+
+
+.blog-list-load {
+  display: inline-block;
+  margin: auto;
+  padding: .5rem .75rem;
+  text-align: center;
+  background: @primary;
+
+  // Visibility
+  display: none;
+  .tweak-blog-list-load-button & {
+    display: block;
+  }
+  [data-last-page-reached] & {
+    display: none;
+  }
 }

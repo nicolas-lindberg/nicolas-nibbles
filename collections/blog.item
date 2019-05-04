@@ -45,45 +45,50 @@
 
     </div>
 
-    <footer class="container">
+    <footer class="post-footer container">
+      <div class="post-footer__inner">
 
-      <!--BLOG INJECTION-->
-      {postItemInjectCode}
+        <!--BLOG INJECTION-->
+        {postItemInjectCode}
 
-      <!--TAGS-->
-      {.repeated section tags}
-        <a class="tag" href="{collection.fullUrl}?tag={@|url-encode}">{@}</a>{.alternates with},
-      {.end}
+        <!--TAGS-->
+        {.repeated section tags}
+          <a class="tag" href="{collection.fullUrl}?tag={@|url-encode}">{@}</a>{.alternates with},
+        {.end}
 
-      <!--SHARE AND LIKE-->
-      {@|like-button}
-      {@|social-button}
-
-
-      <!--LOCATION-->
-      {.section location}
-        <div class="location">
-          <div class="location-map" data-controller="MapViewer" data-loc-name="{addressTitle}" data-loc-lng="{markerLng}" data-loc-lat="{markerLat}" data-loc-zoom="{mapZoom}" data-loc-popup=".location-info"></div>
-          
-          <div class="location-info">
-            {.if addressTitle}<p><strong>{addressTitle}</strong></p>{.end}
-            
-            <p>
-              {addressLine1}
-              {.if addressLine2}<br>{addressLine2}{.end}
-              {.if addressCountry}<br>{addressCountry}{.end}
-            </p>
-
-            <p>
-              <a href="https://www.google.com/maps/search/?api=1&query={addressTitle|url-encode}+{addressLine1|url-encode}+{addressLine2|url-encode}+{addressCountry|url-encode}">Show on Google Maps</a>
-            </p>
-          </div>
+        <!--SHARE AND LIKE-->
+        <div class="likes">
+          {@|like-button}
+          {@|social-button}
         </div>
-      {.end}
 
-      <!--COMMENTS-->
-      {@|comments}
+        <!--LOCATION-->
+        {.section location}
+          <section class="location">
 
+            <div class="location-map" data-controller="MapViewer" data-loc-name="{addressTitle}" data-loc-lng="{markerLng}" data-loc-lat="{markerLat}" data-loc-zoom="{mapZoom}" data-loc-popup=".location-info"></div>
+            
+            <div class="location-info">
+              {.if addressTitle}<p><strong>{addressTitle}</strong></p>{.end}
+              
+              <p>
+                {addressLine1}
+                {.if addressLine2}<br>{addressLine2}{.end}
+                {.if addressCountry}<br>{addressCountry}{.end}
+              </p>
+
+              <p>
+                <a href="https://www.google.com/maps/search/?api=1&query={addressTitle|url-encode}+{addressLine1|url-encode}+{addressLine2|url-encode}+{addressCountry|url-encode}">Show on Google Maps</a>
+              </p>
+            </div>
+
+          </section>
+        {.end}
+
+        <!--COMMENTS-->
+        {@|comments}
+
+      </div>
     </footer>
 
   </article>
@@ -91,23 +96,24 @@
 {.end}
 
 
-<!--PAGINATION-->
-{.section pagination}
-  <nav class="blog-item-pagination">
+{.if collection.features.relatedItems.isEnabled}
+  <squarespace:related collectionId="{collection.id}" limit="3" itemId="{item.id}">
 
-    <!--NEWER PAGE-->
-    {.section prevItem}
-      <a href="{fullUrl}">Newer</a>
-    {.or}
-      <a class="disabled">Newer</a>
+    {.section items}
+      <section class="blog-item-related">
+
+        <div class="container">
+          <h2 class="blog-item-related__title">If that was yummy, these will be scrumtious!</h2>
+        </div>
+
+        <div class="grid grid--padded">
+          {.repeated section @}
+            {@|apply post.block}
+          {.end}
+        </div>
+
+      </section>
     {.end}
 
-    <!--OLDER PAGE-->
-    {.section nextItem}
-      <a href="{fullUrl}">Older</a>
-    {.or}
-      <a class="disabled">Older</a>
-    {.end}
-
-  </nav>
+  </squarespace:related>
 {.end}

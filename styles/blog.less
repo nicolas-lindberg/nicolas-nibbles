@@ -21,15 +21,16 @@
    ========================================================================== */
 
 .post-list__item {
-  margin-bottom: 2.5rem;
   text-align: center;
   position: relative;
 
+  margin-bottom: 2.5rem;
+  
   @media @tablet {
-    margin-bottom: 10rem;
+    margin-bottom: 4rem;
   }
   @media @desktop {
-    margin-bottom: 12rem;
+    margin-bottom: 5rem;
   }
 
   &.hover {
@@ -54,9 +55,19 @@
 
   &.not-featured {
     .post-list__item__content {
+      position: relative;
+
       @media @mobile {
         padding-left: @grid-spacing;
         padding-right: @grid-spacing;
+      }
+
+      @media @tablet {
+        margin-bottom: 4rem;
+      }
+
+      @media @desktop {
+        margin-bottom: 6rem;
       }
     }
 
@@ -79,20 +90,26 @@
         position: absolute;
         left: 0;
         right: 0;
-        bottom: -4em;
+        bottom: -4rem;
         margin-top: 0;
       }
 
       @media @desktop {
-        bottom: -6em;
+        bottom: -6rem;
       }
     }
   }
 
-  &.featured {
+  .blog-list &.featured {
     flex-basis: 100%;
     max-width: 100%;
-    padding: 0;
+
+    @media @mobile {
+      .container {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
 
     @media @tablet {
       .post-list__item__content {
@@ -206,10 +223,13 @@
    ========================================================================== */
 
 
+@post-block-width-tablet: 80%;
+@post-block-width-desktop: 50%;
+
 .sqs-layout {
   > .sqs-row {
-    margin-left: -@grid-spacing;
-    margin-right: -@grid-spacing;
+    margin-left: -@site-padding;
+    margin-right: -@site-padding;
   }
 
   .sqs-block {
@@ -241,12 +261,12 @@
   .html-block,
   .horizontalrule-block {
     @media @tablet {
-      width: 80%;
+      width: @post-block-width-tablet;
       margin-left: auto;
       margin-right: auto;
     }
     @media @desktop {
-      width: 50%;
+      width: @post-block-width-desktop;
     }
   }
 
@@ -281,11 +301,67 @@
 }
 
 
-/* Post blocks
+/* Post footer
+   ========================================================================== */
+
+.post-footer {
+  margin-top: 4rem;
+
+  @media @desktop {
+    margin-top: 6rem;
+  }
+
+  .likes {
+    text-align: center;
+  }
+
+  &__inner {
+    @media @tablet {
+      width: @post-block-width-tablet;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media @desktop {
+      width: @post-block-width-desktop;
+    }
+
+    > * + * {
+      margin-top: 2rem;
+    }
+  }
+}
+
+
+/* Post map
    ========================================================================== */
 
 .location-map {
-  height: 400px;
+  height: 320px;
+}
+.location-info {
+  display: none;
+}
+
+
+
+
+/* Post map
+   ========================================================================== */
+
+.blog-item-related {
+  margin-top: 4rem;
+
+  @media @tablet {
+    margin-top: 6rem;
+  }
+  @media @desktop {
+    margin-top: 8rem;
+  }
+
+  .blog-item-related__title { 
+    margin-bottom: 1em;
+    text-align: center;
+  }
 }
 
 

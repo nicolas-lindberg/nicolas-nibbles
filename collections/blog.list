@@ -20,51 +20,7 @@
       <!-- item loop -->
       {.repeated section items}
 
-        <article id="post-{id}"
-          class="
-            post-list__item grid-item grid-item--half
-            {@|item-classes}
-            {.if starred}{.or}not-featured{.end}
-          "
-          data-item-id="{id}"
-          data-offset="{addedOn}"
-          {.if pagination.nextPage}{.or}data-last-page{.end}
-        >
-
-
-          <div class="post-list__item__content{.if starred} container{.end}">
-
-            <!--POST IMAGE-->
-            {.main-image?}
-              <a href="{fullUrl}" class="post-image content-fill permalink">
-                <img {@|image-meta} />
-              </a>
-            {.end}
-
-            <div class="post-text">
-
-              <!--POST TITLE-->
-              <h2 class="post-title" data-content-field="title">
-                {.passthrough?}
-                  <a href="{sourceUrl}" target="_blank">{title}</a>
-                {.or}
-                  <a href="{fullUrl}" class="permalink">{title}</a>
-                {.end}
-              </h2>
-
-              <!--DATE-->
-              {.if starred}
-                {@|apply date.block}
-              {.end}
-
-              <!--CATEGORIES-->
-                {@|apply categories.block}
-
-            </div>
-
-          </div>
-
-        </article>
+        {@|apply post.block}
 
       {.or}
 

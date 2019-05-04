@@ -84,6 +84,13 @@
 
     </div>
 
+
+    {.if authenticatedAccount}
+      <script type="text/javascript">
+        console.log({@|json-pretty});
+      </script>
+    {.end}
+
     <!-- combo and minify scripts when not logged in -->
     <squarespace:script src="site-bundle.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
 

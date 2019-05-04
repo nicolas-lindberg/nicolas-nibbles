@@ -2,7 +2,6 @@ import { refresh } from '@squarespace/controller';
 import { Lifecycle, Tweak } from '@squarespace/core';
 import Mercury from '@squarespace/mercury';
 
-import { authenticated } from '../constants';
 
 // Exceptions: external links, hash links
 const onClickExceptions = [
@@ -49,7 +48,7 @@ const updateMatrix = [
 
 function SiteLoader() {
 
-  // Don't use ajax in authenticated session or when tweak option is disabled.
+  // Don't use ajax when tweak option is disabled.
   const ajaxEnabled = Tweak.getValue('tweak-site-ajax-loading-enable') === 'true';
   if (!ajaxEnabled) {
     return false;
@@ -65,15 +64,19 @@ function SiteLoader() {
   // Squarespace init and destroy
   window.addEventListener('mercury:load', function() {
     Lifecycle.init();
+
     document.documentElement.setAttribute('data-mercury-loading', 'done');
     setTimeout(function() {
       document.documentElement.removeAttribute('data-mercury-loading');
     }, 500);
   });
+
   window.addEventListener('mercury:unload', function() {
     Lifecycle.destroy();
+
     document.documentElement.setAttribute('data-mercury-loading', '');
   });
+
   window.addEventListener('template:blogList.load', function() {
     mercury.commitCacheEntry(window.location.pathname + window.location.search, '.content-container');
   });
@@ -82,6 +85,5 @@ function SiteLoader() {
   window.addEventListener('mercury:load', refresh);
 
 }
-
 
 export default SiteLoader;

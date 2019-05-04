@@ -9,7 +9,7 @@
     
     <link href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" rel="stylesheet" />
   </head>
-  <body id="{squarespace.page-id}" class="{squarespace.page-classes}" data-controller="SiteLoader, BlogLayout, ResponsiveImageLoader">
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes}" data-controller="SiteLoader">
 
     <div class="site-loader"></div>
 
@@ -34,7 +34,7 @@
 
           <squarespace:query collection="links" >
 
-            <div class="network-sites">
+            <div class="network-sites" data-controller="ResponsiveImageLoader">
               <p>Chef's specials</p>
 
               {.repeated section items}
@@ -74,7 +74,7 @@
 
       <!-- cms content injection point -->
       <main class="content-container" role="main" data-content-field="main-content">
-       {squarespace.main-content}
+        {squarespace.main-content}
       </main>
 
       <!--Footer with open block field -->

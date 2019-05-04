@@ -2,7 +2,7 @@
 {.section item}
 
   <!--WRAPPER-->
-  <article id="post-{id}" class="{@|item-classes}" data-item-id="{id}">
+  <article id="post-{id}" class="{@|item-classes}" data-item-id="{id}" data-controller="BlogLayout, ResponsiveImageLoader">
 
     <!-- COVER IMAGE -->
     {.main-image?}

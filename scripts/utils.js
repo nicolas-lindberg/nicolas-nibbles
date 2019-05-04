@@ -13,7 +13,7 @@ export const scroll = (fn) => {
 
 export const resizeEnd = (fn) => {
 
-  const RESIZE_TIMEOUT = 100;
+  const RESIZE_TIMEOUT = 40;
   let _resizeMeasureTimer;
 
   const resize = function () {

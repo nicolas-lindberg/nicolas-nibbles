@@ -1,5 +1,5 @@
 import { ImageLoader, Tweak } from '@squarespace/core';
-import debounce from 'lodash/debounce';
+import { resizeEnd } from '../utils';
 
 /**
  * Initialize Squarespace image loader
@@ -18,16 +18,21 @@ function ResponsiveImageLoader(element) {
     }
     
   }
+  
+  loadAllImages();
 
   // The event subscription that loads images when the page is ready
   document.addEventListener('DOMContentLoaded', loadAllImages);
+
+  // Bind resize handler
+  resizeEnd(loadAllImages, element);
 
   // Tweak handler
   const tweaksFromDOM = element.getAttribute('data-tweaks');
 
   if (tweaksFromDOM && tweaksFromDOM.length > 0) {
 
-    const tweaks = tweaksFromDOM.split(',').map(function (tweakName) {
+    const tweaks = tweaksFromDOM.split(',').map(function(tweakName) {
       return tweakName.trim();
     });
 
@@ -35,9 +40,6 @@ function ResponsiveImageLoader(element) {
 
   }
 
-  // The event subscription that reloads images on resize
-  const debouncedResize = debounce(loadAllImages, 40);
-  window.addEventListener('resize', debouncedResize);
 }
 
 export default ResponsiveImageLoader;

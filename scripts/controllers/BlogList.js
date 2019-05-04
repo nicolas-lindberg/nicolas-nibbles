@@ -3,12 +3,11 @@ import { resizeEnd, scroll } from '../utils';
 
 const loadEvent = new CustomEvent('template:blogList.load');
 
-
 function BlogList(element) {
 
   // Get elements from DOM
   const blogListInner = element.querySelector('.blog-list__inner');
-  const loadMoreButton = element.querySelector('.blog-list-load'); // TODO
+  const loadMoreButton = element.querySelector('.blog-list-load');
 
   // Load next boolean, used by load function
   let loadNext;
@@ -24,8 +23,6 @@ function BlogList(element) {
 
   const sync = function () {
 
-    console.log(blogListInner);
-
     const items = Array.prototype.slice.call(blogListInner.querySelectorAll('.post-list__item'));
 
     items.forEach(function (item) {
@@ -34,8 +31,7 @@ function BlogList(element) {
 
       if (image) {
         ImageLoader.load(image, {
-          load: true,
-          mode: 'fill'
+          load: true
         });
       }
 
@@ -139,7 +135,7 @@ function BlogList(element) {
       }
     });
 
-    resizeEnd(sync);
+    //resizeEnd(sync);
 
     loadMoreButton.addEventListener('click', loadMoreClick);
 

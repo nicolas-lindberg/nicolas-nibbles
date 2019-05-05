@@ -15,12 +15,15 @@ function toggleMenu(state) {
   if (header.classList.contains('is-open')) {
 
     // Calculate scaling
+    const buttonWidth = hamburgerMenu.offsetWidth;
     const buttonHeight = hamburgerMenu.offsetHeight;
+    const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
-    const scaling = windowHeight / buttonHeight;
+    const scalingX = windowWidth / buttonWidth * 1.1;
+    const scalingY = windowHeight / buttonHeight;
 
     // Open menu. Literally.
-    hamburgerMenu.style.transform = 'scale(' + scaling + ')';
+    hamburgerMenu.style.transform = 'scale(' + scalingX + ',' + scalingY + ')';
 
     // Load images
     const images = menu.querySelectorAll('img[data-src]');

@@ -25,7 +25,7 @@ function BlogList(element) {
 
     const items = Array.prototype.slice.call(blogListInner.querySelectorAll('.post-list__item'));
 
-    items.forEach(function (item) {
+    items.forEach(function(item) {
 
       const image = item.querySelector('.post-image img');
 

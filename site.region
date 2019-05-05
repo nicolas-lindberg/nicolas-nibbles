@@ -34,7 +34,7 @@
 
           <squarespace:query collection="links" >
 
-            <div class="network-sites" data-controller="ResponsiveImageLoader">
+            <div class="network-sites">
               <p>Chef's specials</p>
 
               {.repeated section items}
@@ -55,7 +55,7 @@
                       </h2>
                       
                       <!--LINK IMAGE-->
-                      <div class="external-link__image content-fill">
+                      <div class="external-link__image content-fill" data-controller="ResponsiveImageLoader">
                         {.main-image?}<img {@|image-meta} />{.end}
                       </div>
 
@@ -84,15 +84,8 @@
 
     </div>
 
-
-    {.if authenticatedAccount}
-      <script type="text/javascript">
-        console.log(JSON.parse(JSON.stringify({@|json-pretty})));
-      </script>
-    {.end}
-
     <!-- combo and minify scripts when not logged in -->
-    <squarespace:script src="site-bundle.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
+    <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
 
     <!-- other scripts, and footer code injection -->
     {squarespace-footers}

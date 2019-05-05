@@ -11,11 +11,11 @@ function ResponsiveImageLoader(element) {
 
     const images = element.querySelectorAll('img[data-src]');
 
-    for (var i = 0; i < images.length; i++) {
-      ImageLoader.load(images[i], {
+    images.forEach(function(image)  {
+      ImageLoader.load(image, {
         load: true
       });
-    }
+    });
     
   }
   

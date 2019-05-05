@@ -11,7 +11,7 @@ var config = {
   entry: sourceScripts,
   output: {
     path: bundlePath,
-    filename: 'site-bundle.js'
+    filename: 'site.js'
   },
   module: {
     rules: [
@@ -24,9 +24,6 @@ var config = {
       }
     ]
   },
-  plugins: [
-    //new webpack.optimize.UglifyJsPlugin()
-  ],
   resolve: {
     modules: [
       path.resolve(__dirname, 'node_modules')

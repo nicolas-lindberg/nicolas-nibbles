@@ -15,7 +15,7 @@ import MapViewer from './controllers/MapViewer';
 // Bind controllers
 controller.register('SiteLoader', SiteLoader);
 controller.register('BlogList', BlogList);
-controller.register('BlogLayout', BlogLayout);
+controller.register('BlogItem', BlogItem);
 controller.register('BlogStyles', BlogStyles);
 controller.register('HeaderMenu', HeaderMenu);
 controller.register('ResponsiveImageLoader', ResponsiveImageLoader);

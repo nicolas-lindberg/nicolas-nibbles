@@ -121,11 +121,13 @@
         <div class="container">
           <h2 class="blog-item-related__title">If that was yummy, these will be scrumtious!</h2>
         </div>
-
-        <div class="grid grid--padded">
-          {.repeated section @}
-            {@|apply post.block}
-          {.end}
+  
+        <div class="container-fluid">
+          <div class="grid grid--padded">
+            {.repeated section @}
+              {@|apply post.block}
+            {.end}
+          </div>
         </div>
 
       </section>

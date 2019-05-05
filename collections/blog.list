@@ -24,20 +24,22 @@
     data-controller="ContentRevealer"
     data-reveal-target=".post-list__item">
 
-    <div class="grid grid--padded">
+    <div class="container-fluid">
+      <div class="grid">
 
-      <!-- item loop -->
-      {.repeated section items}
+        <!-- item loop -->
+        {.repeated section items}
 
-        {@|apply post.block}
+          {@|apply post.block}
 
-      {.or}
+        {.or}
 
-        <!-- no items means no blog posts -->
-        <p><em>No blog posts yet.</em></p>
+          <!-- no items means no blog posts -->
+          <p><em>No blog posts yet.</em></p>
 
-      {.end}
+        {.end}
 
+      </div>
     </div>
 
     <a href="#" class="blog-list-load">Load more</a>

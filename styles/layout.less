@@ -9,13 +9,6 @@
   margin-left: -@grid-spacing;
   margin-right: -@grid-spacing;
 
-  &--padded {
-    @media @tablet {
-      margin-left: @grid-spacing/2;
-      margin-right: @grid-spacing/2;
-    }
-  }
-
   .grid-item {
     flex: 0 0 100%;
     max-width: 100%;
@@ -45,6 +38,13 @@
   margin-right: auto;
   padding-left: @site-padding;
   padding-right: @site-padding;
+}
+.container-fluid {
+  width: 100%;
+  padding-right: @site-padding;
+  padding-left: @site-padding;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 

@@ -2,20 +2,25 @@
 {.section item}
 
   <!--WRAPPER-->
-  <article id="post-{id}" class="{@|item-classes}" data-item-id="{id}" data-controller="BlogLayout, ResponsiveImageLoader">
+  <article id="post-{id}" class="{@|item-classes}"
+    data-item-id="{id}"
+    data-controller="BlogLayout, ResponsiveImageLoader">
 
     <!-- COVER IMAGE -->
     {.main-image?}
-      <a href="{fullUrl}" class="cover-image content-fill">
+      <div href="{fullUrl}" class="cover-image content-fill">
         <img {@|image-meta} />
-      </a>
+      </div>
     {.end}
 
-    <header class="post-header container">
+    <header class="post-header container"
+      data-controller="ContentRevealer"
+      data-reveal-duration="1000"
+      data-reveal-delay="500">
 
       <div class="post-header--content">
         <!--POST TILE-->
-        <h1 class="post-title" data-content-field="title">
+        <h1 class="post-title" data-content-field="title" >
           <span>
             {.passthrough?}
               <a href="{sourceUrl}" target="_blank">{title}</a>
@@ -38,7 +43,10 @@
 
     </header>
 
-    <div class="container">
+    <div class="container"
+      data-controller="ContentRevealer"
+      data-reveal="zoom"
+      data-reveal-target=".sqs-block-image">
 
       <!--MAIN CONTENT-->
       {body}
@@ -66,7 +74,13 @@
         {.section location}
           <section class="location">
 
-            <div class="location-map" data-controller="MapViewer" data-loc-name="{addressTitle}" data-loc-lng="{markerLng}" data-loc-lat="{markerLat}" data-loc-zoom="{mapZoom}" data-loc-popup=".location-info"></div>
+            <div class="location-map"
+              data-controller="MapViewer"
+              data-loc-name="{addressTitle}"
+              data-loc-lng="{markerLng}"
+              data-loc-lat="{markerLat}"
+              data-loc-zoom="{mapZoom}"
+              data-loc-popup=".location-info"></div>
             
             <div class="location-info">
               {.if addressTitle}<p><strong>{addressTitle}</strong></p>{.end}
@@ -100,7 +114,9 @@
   <squarespace:related collectionId="{collection.id}" limit="3" itemId="{item.id}">
 
     {.section items}
-      <section class="blog-item-related">
+      <section class="blog-item-related"
+        data-controller="ContentRevealer"
+        data-reveal-target=".post-list__item">
 
         <div class="container">
           <h2 class="blog-item-related__title">If that was yummy, these will be scrumtious!</h2>

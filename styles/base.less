@@ -111,6 +111,16 @@ hr {
   }
 }
 
+img[data-src] {
+  opacity: 0;
+  transition: opacity .4s ease-in-out, transform .4s ease-in-out !important;
+
+  &.is-loaded {
+    opacity: 1;
+  }
+}
+
+
 
 /* Break grid and stack blocks on small screens
 ***************************************************/
@@ -118,5 +128,4 @@ hr {
 @media screen and (max-width: 640px) {
   @import 'sqs-grid-breaker';
 }
-
 

@@ -27,12 +27,12 @@ function BlogList(element) {
 
     items.forEach(function(item) {
 
-      const image = item.querySelector('.post-image img');
+      const image = item.querySelector('.post-image img[data-src]');
 
       if (image) {
-        ImageLoader.load(image, {
-          load: true
-        });
+        // ImageLoader.load(image, {
+        //   load: true
+        // });
       }
 
     });

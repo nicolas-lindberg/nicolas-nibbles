@@ -1,5 +1,6 @@
 
-<div class="blog-list" data-controller="BlogList, BlogLayout">
+<div class="blog-list"
+  data-controller="BlogList, BlogLayout">
 
   {.if categoryFilter || tagFilter || authorFilter}
     <div class="container">
@@ -19,7 +20,9 @@
     </div>
   {.end}
 
-  <div class="blog-list__inner">
+  <div class="blog-list__inner"
+    data-controller="ContentRevealer"
+    data-reveal-target=".post-list__item">
 
     <div class="grid grid--padded">
 

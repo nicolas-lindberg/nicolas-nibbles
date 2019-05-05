@@ -15,6 +15,13 @@ function ResponsiveImageLoader(element) {
       ImageLoader.load(image, {
         load: true
       });
+
+      var img = new Image();
+      img.src = image.src;
+
+      img.onload = function () {
+        image.classList.add('is-loaded');
+      };
     });
     
   }

@@ -14,6 +14,11 @@
 }
 
 .newsletter-block {
+  .newsletter-form-header {
+    @media @mobile {
+      width: auto;
+    }
+  }
   .newsletter-form-wrapper {
     width: 100%;
     margin: 0 !important;
@@ -23,8 +28,13 @@
     margin: 1rem 0;
   }
 
+  .newsletter-form-fields-wrapper {
+    display: block;
+  }
   .newsletter-form-wrapper--layoutStack .newsletter-form-field-wrapper {
-    max-width: 400px;
+    display: inline-block;
+    width: 400px;
+    max-width: 100%;
   }
   .newsletter-form-field-element {
     border: none;

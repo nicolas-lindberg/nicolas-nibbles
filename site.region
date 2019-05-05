@@ -80,7 +80,7 @@
           {squarespace.main-content}
 
         {.or}
-        
+
           <div class="container">
             {squarespace.main-content}
           </div>
@@ -91,7 +91,11 @@
 
       <!--Footer with open block field -->
       <footer class="site-footer">
-        <squarespace:block-field id="footerBlocks" columns="12" />
+
+        <div class="container">
+          <squarespace:block-field id="footerBlocks" columns="12" />
+        </div>
+
       </footer>
 
     </div>

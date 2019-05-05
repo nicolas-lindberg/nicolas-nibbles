@@ -77,11 +77,17 @@
 
         {.equal? collection.typeName "blog"}
 
-          {squarespace.main-content}
+          <div
+            data-controller="ContentRevealer"
+            data-reveal="zoom, drop"
+            data-reveal-target=".sqs-block-image .image-block-wrapper, .sqs-block-image .image-caption-wrapper"
+            data-reveal-delay="0, 1000">
+            {squarespace.main-content}
+          </div>
 
         {.or}
 
-          <div class="container">
+          <div class="container" data-controller="ResponsiveImageLoader">
             {squarespace.main-content}
           </div>
 
@@ -101,7 +107,7 @@
     </div>
 
     <!-- combo and minify scripts when not logged in -->
-    <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
+    <squarespace:script src="site.js" combo="false" />
 
     <!-- other scripts, and footer code injection -->
     {squarespace-footers}

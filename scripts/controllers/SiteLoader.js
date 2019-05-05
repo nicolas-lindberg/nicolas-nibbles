@@ -1,6 +1,7 @@
 import controller from '@squarespace/controller';
 import { Lifecycle, Tweak } from '@squarespace/core';
 import Mercury from '@squarespace/mercury';
+import ScrollReveal from 'scrollreveal';
 import toggleMenu from '../hamburger-menu';
 
 function SiteLoader(element) {
@@ -71,6 +72,7 @@ function SiteLoader(element) {
       onUnload: (e) => {
         document.documentElement.setAttribute('data-mercury-loading', 'start');
 
+        ScrollReveal().destroy();
         Lifecycle.destroy();
       },
       onNavigate: () => {

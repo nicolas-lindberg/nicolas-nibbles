@@ -15,11 +15,11 @@
 
     <header class="post-header container"
       data-controller="ContentRevealer"
-      data-reveal-target=".post-header--content > *"
+      data-reveal-target=".post-header__content > *"
       data-reveal-duration="1000"
       data-reveal-delay="500">
 
-      <div class="post-header--content">
+      <div class="post-header__content">
         <!--POST TILE-->
         <h1 class="post-title" data-content-field="title" >
           <span>
@@ -44,11 +44,7 @@
 
     </header>
 
-    <div class="container"
-      data-controller="ContentRevealer"
-      data-reveal="zoom, drop"
-      data-reveal-target=".sqs-block-image .image-block-wrapper, .sqs-block-image .image-caption-wrapper"
-      data-reveal-delay="0, 1000">
+    <div class="container">
 
       <!--MAIN CONTENT-->
       {body}

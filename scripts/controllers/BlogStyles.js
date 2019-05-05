@@ -4,7 +4,7 @@
  */
 function BlogStyles(element) {
 
-  document.querySelectorAll('.post-list__item').forEach(function(postItem) {
+  element.querySelectorAll('.post-list__item').forEach(function(postItem) {
     postItem.querySelectorAll('.permalink').forEach(function(link) {
 
       link.addEventListener('mouseover', function() {
@@ -18,8 +18,8 @@ function BlogStyles(element) {
     });
   });
 
-  document.querySelectorAll('.text-highlighted, .image-caption').forEach(function(el) {
-    el.innerHTML = el.innerText.split(' ').map(function(text) { return '<span>' + text + '</span>'; }).join(' ');
+  element.querySelectorAll('.text-highlighted, .image-caption').forEach(function(el) {
+    el.innerHTML = el.textContent.split(' ').map(function(text) { return '<span>' + text + '</span>'; }).join(' ');
   });
 
 }

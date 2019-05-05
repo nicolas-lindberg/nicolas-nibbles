@@ -113,10 +113,19 @@ hr {
 
 img[data-src] {
   opacity: 0;
-  transition: opacity .4s @ease, transform .4s @ease !important;
+  transition: opacity .4s @ease, transform .4s @ease;
 
   &.is-loaded {
     opacity: 1;
+  }
+}
+
+// Hide elements using ContentRevealer until loaded
+html.sr {
+  .post-list__item,
+  .post-header > *,
+  .sqs-block-image .image-block-wrapper {
+    visibility: hidden;
   }
 }
 

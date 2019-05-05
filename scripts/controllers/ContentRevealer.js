@@ -3,14 +3,21 @@ import { toArray } from '../utils';
 
 function ContentRevealer(element) {
 
-  var style = element.dataset.reveal;
   var target = element.dataset.revealTarget;
-  var duration = parseInt(element.dataset.revealDuration);
-  var delay = parseInt(element.dataset.revealDelay);
-
-  if (!target) {
-    target = '.' + toArray(element.classList).join('.');
+  var style = element.dataset.reveal;
+  var duration = element.dataset.revealDuration;
+  var delay = element.dataset.revealDelay;
+  
+  if (target) {
+    target = target.split(', ');
+  } else {
+    target = [];
+    target.push('.' + toArray(element.classList).join('.'));
   }
+  if (style) style = style.split(', ');
+  if (duration) duration = duration.split(', ');
+  if (delay) delay = delay.split(', ');
+
 
   const animation = {
     fade: {
@@ -18,30 +25,59 @@ function ContentRevealer(element) {
       easing: 'cubic-bezier(0.5, 0, .3, 1)',
     },
     move: {
+      duration: 400,
+      interval: 100,
       viewFactor: .1,
       distance: '20px',
-      duration: 400,
       easing: 'cubic-bezier(0.5, 0, .3, 1)',
-      interval: 100,
     },
     zoom: {
-      viewFactor: .4,
+      duration: 2000,
+      viewFactor: .3,
       scale: '.95',
       distance: '20px',
-      duration: 2000,
       easing: 'cubic-bezier(0.5, 0, .3, 1)',
     },
+    drop: {
+      duration: 400,
+      origin: 'top',
+      distance: '20px',
+      easing: 'cubic-bezier(0.5, 0, .3, 1)',
+    }
   };
+
 
   var options = animation.move;
 
-  if (style == 'zoom') {options = animation.zoom;}
+  target.forEach(function(name, i) {
 
-  if (duration) {options.duration = duration;}
-  if (delay) {options.delay = delay;}
+    function pickAttribute(attribute) {
+      var a;
 
-  if (element.querySelector(target)) {ScrollReveal().reveal(target, options);}
+      if (attribute) {
+        if (attribute[i]) {
+          a = attribute[i];
+        } else if (attribute[0]) {
+          a = attribute[0];
+        }
+      }
 
+      return a;
+    }
+
+    var s = pickAttribute(style);
+
+    if (s) {
+      if (s == 'zoom') options = animation.zoom;
+      if (s == 'drop') options = animation.drop;
+    }
+
+    if (duration) options.duration = parseInt(pickAttribute(duration));
+    if (delay) options.delay = parseInt(pickAttribute(delay));
+  
+    ScrollReveal().reveal(name, options);
+
+  });
 }
 
 export default ContentRevealer;

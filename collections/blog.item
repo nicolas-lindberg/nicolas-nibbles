@@ -15,6 +15,7 @@
 
     <header class="post-header container"
       data-controller="ContentRevealer"
+      data-reveal-target=".post-header--content > *"
       data-reveal-duration="1000"
       data-reveal-delay="500">
 
@@ -45,8 +46,9 @@
 
     <div class="container"
       data-controller="ContentRevealer"
-      data-reveal="zoom"
-      data-reveal-target=".sqs-block-image">
+      data-reveal="zoom, drop"
+      data-reveal-target=".sqs-block-image .image-block-wrapper, .sqs-block-image .image-caption-wrapper"
+      data-reveal-delay="0, 1000">
 
       <!--MAIN CONTENT-->
       {body}

@@ -53,11 +53,6 @@
     .post-list__item__content {
       position: relative;
 
-      @media @mobile {
-        padding-left: @grid-spacing;
-        padding-right: @grid-spacing;
-      }
-
       @media @tablet {
         margin-bottom: 4rem;
       }
@@ -155,6 +150,9 @@
 /* Post page
    ========================================================================== */
 
+@post-block-width-tablet: 80%;
+@post-block-width-desktop: 50%;
+
 .post-header {
   position: relative;
   z-index: 1;
@@ -162,7 +160,7 @@
 
   &--content {
     @media @desktop {
-      width: 80%;
+      width: @post-block-width-tablet;
       margin: auto;
     }
   }
@@ -214,13 +212,9 @@
 }
 
 
-
 /* Post blocks
    ========================================================================== */
 
-
-@post-block-width-tablet: 80%;
-@post-block-width-desktop: 50%;
 
 .sqs-layout {
   > .sqs-row {

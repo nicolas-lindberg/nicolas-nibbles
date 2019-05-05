@@ -7,12 +7,12 @@ function ContentRevealer(element) {
   var target = element.dataset.revealTarget;
   var duration = parseInt(element.dataset.revealDuration);
   var delay = parseInt(element.dataset.revealDelay);
-  
+
   if (!target) {
-    target = '.'+toArray(element.classList).join('.');
+    target = '.' + toArray(element.classList).join('.');
   }
 
-  const animation = {
+  const animation = {
     fade: {
       duration: 1000,
       easing: 'cubic-bezier(0.5, 0, .3, 1)',
@@ -31,17 +31,17 @@ function ContentRevealer(element) {
       duration: 2000,
       easing: 'cubic-bezier(0.5, 0, .3, 1)',
     },
-  }
+  };
 
   var options = animation.move;
-  
-  if (style == 'zoom') options = animation.zoom;
 
-  if (duration) options.duration = duration;
-  if (delay) options.delay = delay;
+  if (style == 'zoom') {options = animation.zoom;}
 
-  if (element.querySelector(target)) ScrollReveal().reveal(target, options);
-  
+  if (duration) {options.duration = duration;}
+  if (delay) {options.delay = delay;}
+
+  if (element.querySelector(target)) {ScrollReveal().reveal(target, options);}
+
 }
 
 export default ContentRevealer;

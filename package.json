@@ -29,6 +29,7 @@
     "deploy": "npm run build && squarespace setup && squarespace deploy",
     "deploy:force": "squarespace setup && squarespace deploy --force",
     "lint": "eslint scripts",
+    "lint:fix": "eslint scripts --fix",
     "start": "squarespace setup && (npm run watch & npm run server)",
     "server": "squarespace runserver --auth",
     "server:auth": "npm run server -- --run-authenticated",

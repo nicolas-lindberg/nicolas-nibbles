@@ -11,7 +11,7 @@ function ResponsiveImageLoader(element) {
 
     const images = element.querySelectorAll('img[data-src]');
 
-    images.forEach(function(image)  {
+    images.forEach(function(image) {
       ImageLoader.load(image, {
         load: true
       });
@@ -23,9 +23,9 @@ function ResponsiveImageLoader(element) {
         image.classList.add('is-loaded');
       };
     });
-    
+
   }
-  
+
   loadAllImages();
 
   // The event subscription that loads images when the page is ready

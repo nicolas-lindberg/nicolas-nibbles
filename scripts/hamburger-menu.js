@@ -11,7 +11,7 @@ function toggleMenu(state) {
 
   // Set scaling
   if (header.classList.contains('is-open')) {
-    
+
     document.body.classList.add('no-scroll');
 
     // Calculate scaling
@@ -28,7 +28,7 @@ function toggleMenu(state) {
     // Load images
     const images = menu.querySelectorAll('img[data-src]');
 
-    images.forEach(function(image)  {
+    images.forEach(function(image) {
       ImageLoader.load(image, {
         load: true
       });
@@ -40,7 +40,7 @@ function toggleMenu(state) {
     document.body.classList.remove('no-scroll');
 
   }
-  
+
 }
 
 export default toggleMenu;

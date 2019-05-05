@@ -79,11 +79,11 @@ function SiteLoader(element) {
         toggleMenu(false);
       }
     });
-  }
 
-  window.addEventListener('template:blogList.load', function() {
-    mercury.commitCacheEntry(window.location.pathname + window.location.search, '.content-container');
-  });
+    window.addEventListener('template:blogList.load', function() {
+      mercury.commitCacheEntry(window.location.pathname + window.location.search, '.content-container');
+    });
+  }
 
 }
 

@@ -74,7 +74,19 @@
 
       <!-- cms content injection point -->
       <main class="content-container" role="main" data-content-field="main-content">
-        {squarespace.main-content}
+
+        {.equal? collection.typeName "blog"}
+
+          {squarespace.main-content}
+
+        {.or}
+        
+          <div class="container">
+            {squarespace.main-content}
+          </div>
+
+        {.end}
+
       </main>
 
       <!--Footer with open block field -->

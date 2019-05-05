@@ -26,7 +26,7 @@
   "scripts": {
     "build": "squarespace assemble && webpack --mode production",
     "clean": "squarespace clean",
-    "deploy": "squarespace setup && squarespace deploy",
+    "deploy": "npm run build && squarespace setup && squarespace deploy",
     "deploy:force": "squarespace setup && squarespace deploy --force",
     "lint": "eslint scripts",
     "start": "squarespace setup && (npm run watch & npm run server)",

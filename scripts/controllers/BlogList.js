@@ -30,9 +30,9 @@ function BlogList(element) {
       const image = item.querySelector('.post-image img[data-src]');
 
       if (image) {
-        // ImageLoader.load(image, {
-        //   load: true
-        // });
+        ImageLoader.load(image, {
+          load: true
+        });
       }
 
     });

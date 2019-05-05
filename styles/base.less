@@ -104,7 +104,7 @@ hr {
 // Transition content
 .content-container {
   opacity: 1;
-  transition: opacity .4s ease-in-out;
+  transition: opacity .4s @ease;
 
   [data-mercury-loading="start"] & {
     opacity: 0;
@@ -113,7 +113,7 @@ hr {
 
 img[data-src] {
   opacity: 0;
-  transition: opacity .4s ease-in-out, transform .4s ease-in-out !important;
+  transition: opacity .4s @ease, transform .4s @ease !important;
 
   &.is-loaded {
     opacity: 1;

@@ -1,4 +1,5 @@
 import ScrollReveal from 'scrollreveal';
+import { toArray } from '../utils';
 
 function ContentRevealer(element) {
 
@@ -7,7 +8,9 @@ function ContentRevealer(element) {
   var duration = parseInt(element.dataset.revealDuration);
   var delay = parseInt(element.dataset.revealDelay);
   
-  target = target || element;
+  if (!target) {
+    target = '.'+toArray(element.classList).join('.');
+  }
 
   const animation = {
     fade: {
@@ -37,7 +40,7 @@ function ContentRevealer(element) {
   if (duration) options.duration = duration;
   if (delay) options.delay = delay;
 
-  ScrollReveal().reveal(target, options);
+  if (element.querySelector(target)) ScrollReveal().reveal(target, options);
   
 }
 

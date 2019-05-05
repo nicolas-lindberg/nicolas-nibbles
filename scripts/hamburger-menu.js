@@ -2,17 +2,17 @@
 
 const header = document.querySelector('.site-header');
 const menu = header.querySelector('.site-menu');
-const menuToggle = header.querySelectorAll('.mobile-menu-toggle');
 const hamburgerMenu = header.querySelector('#hamburger-menu');
 
 function toggleMenu(state) {
 
   // Toggle visibility state
   header.classList.toggle('is-open', state);
-  document.body.classList.toggle('no-scroll', state);
 
   // Set scaling
   if (header.classList.contains('is-open')) {
+    
+    document.body.classList.add('no-scroll');
 
     // Calculate scaling
     const buttonWidth = hamburgerMenu.offsetWidth;
@@ -37,6 +37,7 @@ function toggleMenu(state) {
   } else {
 
     hamburgerMenu.style.transform = null;
+    document.body.classList.remove('no-scroll');
 
   }
   

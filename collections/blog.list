@@ -1,6 +1,6 @@
 
 <div class="blog-list"
-  data-controller="BlogList, BlogLayout">
+  data-controller="BlogList, BlogStyles">
 
   {.if categoryFilter || tagFilter || authorFilter}
     <div class="container">

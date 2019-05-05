@@ -4,7 +4,7 @@
   <!--WRAPPER-->
   <article id="post-{id}" class="{@|item-classes}"
     data-item-id="{id}"
-    data-controller="BlogLayout, ResponsiveImageLoader">
+    data-controller="BlogItem, BlogStyles, ResponsiveImageLoader">
 
     <!-- COVER IMAGE -->
     {.main-image?}

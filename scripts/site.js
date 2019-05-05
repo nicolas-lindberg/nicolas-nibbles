@@ -5,7 +5,8 @@ import controller from '@squarespace/controller';
 // Import controllers
 import SiteLoader from './controllers/SiteLoader';
 import BlogList from './controllers/BlogList';
-import BlogLayout from './controllers/BlogLayout';
+import BlogItem from './controllers/BlogItem';
+import BlogStyles from './controllers/BlogStyles';
 import HeaderMenu from './controllers/HeaderMenu';
 import ResponsiveImageLoader from './controllers/ResponsiveImageLoader';
 import ContentRevealer from './controllers/ContentRevealer';
@@ -15,6 +16,7 @@ import MapViewer from './controllers/MapViewer';
 controller.register('SiteLoader', SiteLoader);
 controller.register('BlogList', BlogList);
 controller.register('BlogLayout', BlogLayout);
+controller.register('BlogStyles', BlogStyles);
 controller.register('HeaderMenu', HeaderMenu);
 controller.register('ResponsiveImageLoader', ResponsiveImageLoader);
 controller.register('ContentRevealer', ContentRevealer);

@@ -20,7 +20,10 @@ function BlogStyles(element) {
 
 
   element.querySelectorAll('.text-highlighted, .image-caption').forEach(function(el) {
-    el.innerHTML = el.textContent.split(' ').map(function(text) { return '<span>' + text + '</span>'; }).join(' ');
+    var paragraphs = el.querySelectorAll('p');
+    paragraphs.forEach(function(p) {
+      p.innerHTML = p.textContent.split(' ').map(function(text) { return '<span>' + text + '</span>'; }).join(' ');
+    });
   });
 
 

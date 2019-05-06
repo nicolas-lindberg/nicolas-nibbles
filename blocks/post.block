@@ -36,6 +36,11 @@
         {@|apply date.block}
       {.end}
 
+      <!--EXCERPT-->
+      {.if collection && starred && excerpt}
+        <div class="excerpt">{excerpt}</div>
+      {.end}
+
       <!--TAGS-->
       {@|apply tags.block}
 

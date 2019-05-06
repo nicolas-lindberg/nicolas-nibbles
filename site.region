@@ -81,7 +81,7 @@
             data-controller="ContentRevealer"
             data-reveal="zoom, drop"
             data-reveal-target=".sqs-block-image .image-block-wrapper, .sqs-block-image .image-caption-wrapper"
-            data-reveal-delay="0, 1000">
+            data-reveal-delay="0, 400">
             {squarespace.main-content}
           </div>
 

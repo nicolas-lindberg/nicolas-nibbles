@@ -32,7 +32,7 @@
         </h1>
 
         <!--CATEGORIES-->
-        {@|apply categories.block}
+        {@|apply tags.block}
 
         <!--EXCERPT-->
         {.if excerpt}

@@ -1,0 +1,8 @@
+{.if tags}
+  <div class="post-categories">
+    {.repeated section tags}
+      <a class="tag" href="{collection.fullUrl}?tag={@|url-encode}">{@}</a>{.alternates with}
+      <span class="separator"></span>
+    {.end}
+  </div>
+{.end}

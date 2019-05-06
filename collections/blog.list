@@ -6,7 +6,7 @@
     <div class="container">
 
       {.section categoryFilter}
-        <h1 class="filtered-by">Nibbles á la {@|safe}</h1>
+        <h1 class="filtered-by">Find those {@|safe}</h1>
       {.end}
 
       {.section tagFilter}

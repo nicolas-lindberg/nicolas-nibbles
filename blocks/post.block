@@ -36,8 +36,8 @@
         {@|apply date.block}
       {.end}
 
-      <!--CATEGORIES-->
-      {@|apply categories.block}
+      <!--TAGS-->
+      {@|apply tags.block}
 
     </div>
 

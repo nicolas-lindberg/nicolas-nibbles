@@ -4,10 +4,11 @@ import toggleMenu from '../hamburger-menu';
  * Functionality for header menu
  */
 function HeaderMenu(element) {
-  HeaderMenu;
 
   document.addEventListener('click', function (e) {
-    if (e.target.matches('.mobile-menu-toggle')) {toggleMenu();}
+    if (e.target.matches('.mobile-menu-toggle')) {
+      toggleMenu();
+    }
   }, false);
 
 }

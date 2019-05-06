@@ -1,13 +1,11 @@
+import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
+import color from 'onecolor/minimal.js';
 
 function MapViewer(element) {
 
   // Get theme color
-  var color = require('onecolor/minimal.js');
   var mapAccent = Y.Squarespace.Template.getTweakValue('tweak-site-color-primary');
   mapAccent = color(mapAccent);
-
-  // Load mapbox
-  var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 
   mapboxgl.accessToken = 'pk.eyJ1Ijoibmljb2xhc2wiLCJhIjoiOWVlNGM4ZmM1MDQ5NmI4MDU2MzQ1N2UwOGUwNTkyZWUifQ.Xw1GbwplWlT8hPCYUMmVuw';
 

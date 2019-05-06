@@ -22,13 +22,11 @@
       <div class="post-header__content">
         <!--POST TILE-->
         <h1 class="post-title" data-content-field="title" >
-          <span>
-            {.passthrough?}
-              <a href="{sourceUrl}" target="_blank">{title}</a>
-            {.or}
-              {title}
-            {.end}
-          </span>
+          {.passthrough?}
+            <a href="{sourceUrl}" target="_blank">{title}</a>
+          {.or}
+            <span>{title}</span>
+          {.end}
         </h1>
 
         <!--CATEGORIES-->
@@ -79,10 +77,10 @@
               data-loc-lat="{markerLat}"
               data-loc-zoom="{mapZoom}"
               data-loc-popup=".location-info"></div>
-            
+
             <div class="location-info">
               {.if addressTitle}<p><strong>{addressTitle}</strong></p>{.end}
-              
+
               <p>
                 {addressLine1}
                 {.if addressLine2}<br>{addressLine2}{.end}
@@ -119,7 +117,7 @@
         <div class="container">
           <h2 class="blog-item-related__title">If that was yummy, these will be scrumtious!</h2>
         </div>
-  
+
         <div class="container-fluid">
           <div class="grid grid--padded">
             {.repeated section @}

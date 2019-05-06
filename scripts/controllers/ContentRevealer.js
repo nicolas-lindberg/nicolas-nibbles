@@ -68,8 +68,8 @@ function ContentRevealer(element) {
     var s = pickAttribute(style);
 
     if (s) {
-      if (s == 'zoom') options = animation.zoom;
-      if (s == 'drop') options = animation.drop;
+      if (s === 'zoom') options = animation.zoom;
+      if (s === 'drop') options = animation.drop;
     }
 
     if (duration) options.duration = parseInt(pickAttribute(duration));

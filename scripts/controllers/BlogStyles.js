@@ -18,8 +18,25 @@ function BlogStyles(element) {
     });
   });
 
+
   element.querySelectorAll('.text-highlighted, .image-caption').forEach(function(el) {
     el.innerHTML = el.textContent.split(' ').map(function(text) { return '<span>' + text + '</span>'; }).join(' ');
+  });
+
+
+  element.querySelectorAll('.post-title > *').forEach(function(heading) {
+
+    var headingText = heading.textContent;
+    var words = headingText.split(' ');
+    var lastWords = [
+      words[words.length - 2],
+      words[words.length - 1],
+    ];
+    delete words[words.length - 2];
+    delete words[words.length - 1];
+
+    heading.innerHTML = words.join(' ') + '<span style="white-space: nowrap">' + lastWords.join(' ') + '</span>';
+
   });
 
 }

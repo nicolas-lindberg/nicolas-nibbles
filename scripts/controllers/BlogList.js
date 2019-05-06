@@ -23,9 +23,89 @@ function BlogList(element) {
 
   const sync = function () {
 
-    const items = Array.prototype.slice.call(blogListInner.querySelectorAll('.post-list__item'));
+    const posts = Array.prototype.slice.call(blogListInner.querySelectorAll('.post-list__item'));
 
-    items.forEach(function(item) {
+
+    // var isFine = false
+    // var fineIndex = 0
+    // while(!isFine) {
+
+    //   // checking each row
+    //   // if something isn't fine
+    //     // get replacment
+    //     // set current index
+    //     // continue
+    //   // if everything is fine change isFine variable
+
+    //   ..loops
+
+    //   isFine = true
+    // }
+
+    const isFeatured = function(el) {
+      return el.classList.contains('featured');
+    };
+
+    const arrayMove = function(arr, fromIndex, toIndex) {
+      var el = arr[fromIndex];
+      arr.splice(fromIndex, 1);
+      arr.splice(toIndex, 0, el);
+    };
+
+    function organizePosts(items, columns) {
+
+      var position = 0;
+
+      items.forEach(function(item, i) {
+
+        position++; // handles the item's row position
+
+        // if need to bring up not featured post
+        if (isFeatured(item)) {
+
+          if (position === 2) {
+
+            // switch place with post above
+            var switchItem = items[i - 1]
+            items[i - 1] = item;
+            items[i] = switchItem;
+
+          } else if (position !== 1) {
+
+            // loop through next posts
+            for (let n = i + 1; n < items.length; n++) {
+              // if it's not featured, move up that post
+              if (!isFeatured(items[n])) {
+                arrayMove(items, n, i);
+                break;
+              }
+            }
+
+          }
+
+        }
+
+        // if row is full, or if it's a featured post, reset position
+        if (position === columns || (isFeatured(item) && position === 1)) {
+          // row is fine, reset
+          position = 0;
+        }
+
+      });
+
+    }
+
+    if (window.innerWidth >= 768) {
+      var columns = 2;
+
+      if (window.innerWidth >= 1600) {
+        columns = 3;
+      }
+      organizePosts(posts, columns);
+    }
+
+    posts.forEach(function(item, i) {
+      item.style.order = i + 1;
 
       const image = item.querySelector('.post-image img[data-src]');
 
@@ -34,7 +114,6 @@ function BlogList(element) {
           load: true
         });
       }
-
     });
 
     // Sync last page data
@@ -135,7 +214,7 @@ function BlogList(element) {
       }
     });
 
-    //resizeEnd(sync);
+    resizeEnd(sync);
 
     loadMoreButton.addEventListener('click', loadMoreClick);
 

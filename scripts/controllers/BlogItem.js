@@ -1,7 +1,14 @@
+import scrollToElement from '../scroll-to-element';
 
 function BlogItem(element) {
 
-  window.scrollTo(0, 136);
+  console.log(scrollToElement);
+
+  scrollToElement({
+    destination: element,
+    duration: 1000,
+    delay: 1000,
+  });
 
 }
 

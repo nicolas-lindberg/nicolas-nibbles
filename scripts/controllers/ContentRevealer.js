@@ -7,7 +7,7 @@ function ContentRevealer(element) {
   var style = element.dataset.reveal;
   var duration = element.dataset.revealDuration;
   var delay = element.dataset.revealDelay;
-  
+
   if (target) {
     target = target.split(', ');
   } else {
@@ -74,7 +74,7 @@ function ContentRevealer(element) {
 
     if (duration) options.duration = parseInt(pickAttribute(duration));
     if (delay) options.delay = parseInt(pickAttribute(delay));
-  
+
     ScrollReveal().reveal(name, options);
 
   });

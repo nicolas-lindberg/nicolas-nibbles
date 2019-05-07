@@ -2,7 +2,7 @@
 {.section item}
 
   <!--WRAPPER-->
-  <article id="post-{id}" class="{@|item-classes}"
+  <article id="post-{id}" class="post-item {@|item-classes}"
     data-item-id="{id}"
     data-controller="BlogItem, BlogStyles, ResponsiveImageLoader">
 

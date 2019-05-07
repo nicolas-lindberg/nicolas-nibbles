@@ -1,7 +1,7 @@
 
 <article id="post-{id}"
   class="
-    post-list__item grid-item grid-item--half
+    post-list__item post-item grid-item grid-item--half
     {@|item-classes}
     {.if collection && starred}{.or}not-featured{.end}
   "

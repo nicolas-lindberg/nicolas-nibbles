@@ -1,17 +1,17 @@
 
 var path = require('path');
-var webpack = require('webpack');
 
 var bundlePath = path.resolve(__dirname, 'build', 'scripts');
-var sitejs = ['./scripts/site.js'];
-
-var sourceScripts = sitejs;
+var sources = {
+  site: './scripts/site.js',
+  maps: './scripts/maps.js'
+};
 
 var config = {
-  entry: sourceScripts,
+  entry: sources,
   output: {
     path: bundlePath,
-    filename: 'site.js'
+    filename: '[name].bundle.js'
   },
   module: {
     rules: [
@@ -23,6 +23,11 @@ var config = {
         }
       }
     ]
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
   },
   resolve: {
     modules: [

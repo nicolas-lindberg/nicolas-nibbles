@@ -72,6 +72,7 @@
       padding-right: 1rem;
 
       @media @tablet {
+        min-height: @line-height-heading * 2em;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
       }
@@ -102,6 +103,8 @@
 
     @media @mobile {
       .container {
+        margin-left: -@site-padding;
+        margin-right: -@site-padding;
         padding-left: 0;
         padding-right: 0;
       }
@@ -114,19 +117,20 @@
     }
 
     @media @tablet {
+      min-height: 480px;
+
       .post-list__item__content {
         display: flex;
+        height: 100%;
       }
 
       .post-image {
         width: 50%;
-        height: 480px;
+        height: 100%;
       }
     }
     @media @desktop-xl {
-      .post-image {
-        height: 640px;
-      }
+      min-height: 640px;
     }
 
     .post-text {
@@ -141,12 +145,17 @@
         padding: 3rem;
 
         .excerpt {
+          margin-top: 1rem;
           flex-grow: 1;
         }
       }
       @media @desktop {
         padding: 4rem;
       }
+    }
+
+    .post-image img {
+      display: block;
     }
 
     .post-categories {

@@ -1,7 +1,7 @@
 
 
 <div class="post-time">
-  <a href="{fullUrl}" class="permalink">
-    <span class="text-highlighted"><time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time></span>
+  <a href="{fullUrl}" class="permalink text-highlighted">
+    <span><time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time></span>
   </a>
 </div>

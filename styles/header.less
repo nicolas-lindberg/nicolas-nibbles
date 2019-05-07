@@ -266,11 +266,16 @@
       transition: transform .1s ease-in-out;
       padding: 0 .5rem;
 
+      span {
+        position: relative;
+        z-index: 1;
+      }
+
       &::after {
         content: "";
         position: absolute;
         box-sizing: border-box;
-        height: .25rem;
+        height: .375em;
         top: 50%;
         transform: translateY(-50%);
         left: 0;

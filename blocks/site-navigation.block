@@ -2,17 +2,19 @@
   <ul class="site-navigation-list">
     {.repeated section items}
 
-      <li class="site-navigation-item {.section active} active-link{.end}">
+      <li class="site-navigation-item {.section active}active-link{.end}">
 
         <!-- collection link -->
         {.section collection}
-          <a href="{fullUrl}">{navigationTitle}</a>
+          <a href="{fullUrl}">
+            <span>{navigationTitle}</span>
+          </a>
         {.end}
 
         <!-- external link -->
         {.section externalLink}
           <a href="{url}"{.section newWindow} target="_blank"{.end}>
-            {title}
+            <span>{title}</span>
           </a>
         {.end}
 

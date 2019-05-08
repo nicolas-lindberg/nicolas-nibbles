@@ -19,7 +19,7 @@ Think of partials like classes in CSS. A class is typically something that is re
 
 Certain Squarespace tags expect a `.block` file to provide the JSON-T for rendering that tag. (For example, the navigation tag.) To provide a partial for your site navigation, create a `.block` file here, (like `nav.block`) and then put a navigation tag in your `.region` file:
 
-    <squarespace:navigation navigationId="siteNav" template="nav" />
+    <squarespace:navigation navigationId="site-nav" template="nav" />
 
 
 ### Further reading

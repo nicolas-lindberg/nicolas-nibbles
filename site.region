@@ -30,7 +30,7 @@
 
           <p class="hidden-tablet">On the menu tonight</p>
 
-          <squarespace:navigation navigationId="siteNav" template="site-navigation" />
+          <squarespace:navigation navigationId="site-nav" template="site-navigation" />
 
           <squarespace:query collection="links" >
 
@@ -99,7 +99,8 @@
       <footer class="site-footer">
 
         <div class="container">
-          <squarespace:block-field id="footerBlocks" columns="12" />
+          <squarespace:block-field id="footer-blocks" columns="12" />
+          <squarespace:block-field id="footer-notes" columns="1" />
         </div>
 
       </footer>

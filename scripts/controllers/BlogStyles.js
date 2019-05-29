@@ -32,7 +32,7 @@ function BlogStyles(element) {
     var headingText = heading.textContent;
     var words = headingText.split(' ');
 
-    if (words[words.length - 1].length > 10 && window.innerWidth < 768 ) return;
+    if ( words[words.length - 1].length > 10 && window.innerWidth < 768 ) return;
 
     var lastWords = [
       words[words.length - 2],

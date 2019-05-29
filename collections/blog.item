@@ -63,7 +63,6 @@
         <!--SHARE AND LIKE-->
         <div class="likes">
           {@|like-button}
-          {@|social-button}
         </div>
 
         <!--LOCATION-->

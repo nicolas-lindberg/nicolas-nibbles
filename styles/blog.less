@@ -333,7 +333,9 @@
   }
 
   .likes {
-    text-align: center;
+    > * + * {
+      margin-top: .5rem;
+    }
   }
 
   &__inner {
@@ -348,6 +350,46 @@
 
     > * + * {
       margin-top: 2rem;
+    }
+  }
+}
+
+.sqs-simple-like {
+  line-height: inherit;
+
+  .like-icon {
+    float: none;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    width: 3rem;
+    height: 3rem;
+    background: @primary !important;
+    text-align: center;
+    transition: all .2s @ease;
+
+    &::before {
+      content: "\2665";
+      color: @black;
+      position: absolute;
+      font-size: 1.5rem;
+      top: 50%;
+      transform: translateY(-40%);
+      left: 0;
+      right: 0;
+      transition: all .2s @ease;
+    }
+  }
+  .like-count {
+    vertical-align: middle;
+  }
+  &:hover {
+    .like-icon {
+      transform: scale(.9);
+
+      &::before {
+        font-size: 2rem;
+      }
     }
   }
 }

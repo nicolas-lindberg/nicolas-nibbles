@@ -10,6 +10,7 @@ import BlogList from './controllers/BlogList';
 import BlogItem from './controllers/BlogItem';
 import BlogStyles from './controllers/BlogStyles';
 import HeaderMenu from './controllers/HeaderMenu';
+import MapViewer from './controllers/MapViewer';
 
 // Bind controllers
 controller.register('BlogStyles', BlogStyles);
@@ -19,3 +20,4 @@ controller.register('SiteLoader', SiteLoader);
 controller.register('BlogList', BlogList);
 controller.register('BlogItem', BlogItem);
 controller.register('HeaderMenu', HeaderMenu);
+controller.register('MapViewer', MapViewer);

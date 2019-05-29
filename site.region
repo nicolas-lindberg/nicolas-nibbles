@@ -110,8 +110,6 @@
     <!-- load template scripts -->
     <squarespace:script src="vendors~site.bundle.js" combo="false" />
     <squarespace:script src="site.bundle.js" combo="false" />
-    <squarespace:script src="vendors~maps.bundle.js" combo="false" />
-    <squarespace:script src="maps.bundle.js" combo="false" />
 
     <!-- other scripts, and footer code injection -->
     {squarespace-footers}

@@ -4,7 +4,7 @@ var path = require('path');
 var bundlePath = path.resolve(__dirname, 'build', 'scripts');
 var sources = {
   site: './scripts/site.js',
-  maps: './scripts/maps.js'
+  //maps: './scripts/maps.js'
 };
 
 var config = {
